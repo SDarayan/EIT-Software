@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EngMATLib</name>
+    </assembly>
+    <members>
+        <member name="T:EngMATLib.MATInvoke">
+            <summary>
+            A P/Invoke interface class for the three groups of MATLAB APIs
+            - libmx
+            - libmat
+            - libeng
+            </summary>
+        </member>
+        <member name="T:EngMATLib.MATInvoke.mxComplexity">
+            <summary>
+            The Type of Matrix
+            </summary>
+        </member>
+        <member name="F:EngMATLib.MATInvoke.mxComplexity.mxREAL">
+            <summary>
+            real matrix
+            </summary>
+        </member>
+        <member name="F:EngMATLib.MATInvoke.mxComplexity.mxCOMPLEX">
+            <summary>
+            complex matrix
+            </summary>
+        </member>
+        <member name="T:EngMATLib.MATInvoke.mxClassID">
+            <summary>
+            Type of Matrix elements
+            </summary>
+        </member>
+        <member name="T:EngMATLib.FileAccess">
+            <summary>
+            File Access modes for MAT files
+            </summary>
+        </member>
+        <member name="F:EngMATLib.FileAccess.Read">
+            <summary>
+            Read Only
+            </summary>
+        </member>
+        <member name="F:EngMATLib.FileAccess.Update">
+            <summary>
+            Read And Write, the original file version is kept
+            </summary>
+        </member>
+        <member name="F:EngMATLib.FileAccess.Write">
+            <summary>
+            Write only, if the file exits, it's cleared
+            </summary>
+        </member>
+        <member name="F:EngMATLib.FileAccess.Write4">
+            <summary>
+            Write a MATLAB v4 file
+            </summary>
+        </member>
+        <member name="T:EngMATLib.MATFile">
+            <summary>
+            A Library for .MAT file Access
+            </summary>
+        </member>
+        <member name="M:EngMATLib.MATFile.#ctor">
+            <summary>
+            No file
+            </summary>
+        </member>
+        <member name="M:EngMATLib.MATFile.#ctor(System.String,EngMATLib.FileAccess)">
+            <summary>
+            Open the specific file
+            </summary>
+            <param name="filename"></param>
+            <param name="fa"></param>
+        </member>
+        <member name="M:EngMATLib.MATFile.ReOpen">
+            <summary>
+            ReOpen a file (rewind), except for Write modes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.Open(System.String,EngMATLib.FileAccess)">
+            <summary>
+            Opens the specific file
+            </summary>
+            <param name="filename"></param>
+            <param name="fa"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.DestroyMatrix(System.String)">
+            <summary>
+            Destroy a matrix variable by name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.GetMatrixInfo(System.String)">
+            <summary>
+            Gets a matrix variable info
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.GetMatrix(System.String,System.Double[0:,0:]@)">
+            <summary>
+            Get a Matrix variable
+            </summary>
+            <param name="name"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.PutMatrix(System.String,System.Double[0:,0:])">
+            <summary>
+            Stores a matrix variable
+            </summary>
+            <param name="name"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.MATFile.Close">
+            <summary>
+            Closes it
+            </summary>
+        </member>
+        <member name="M:EngMATLib.MATFile.Dispose">
+            <summary>
+            IDisposable implementation
+            </summary>
+        </member>
+        <member name="P:EngMATLib.MATFile.Variables">
+            <summary>
+            The property of all the Variables in a MAT file
+            Can be called only as first operation
+            </summary>
+        </member>
+        <member name="P:EngMATLib.MATFile.IsOpened">
+            <summary>
+            Tells if the file is opened
+            </summary>
+        </member>
+        <member name="P:EngMATLib.MATFile.Filename">
+            <summary>
+            The Filename of the MATFile object
+            </summary>
+        </member>
+        <member name="T:EngMATLib.NamedMatrixCollection">
+            <summary>
+            A Collection of String --&gt; MatrixDescription objects
+            </summary>
+        </member>
+        <member name="T:EngMATLib.EngMATAccess">
+            <summary>
+            A Class to Interface MATLAB with C# using MATLAB Engine API
+            Of the three methods (COM,DDE,MAT) this is the faster and better one
+            although it uses unsafe methods to gain direct memory access
+            </summary>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.#ctor">
+            <summary>
+            Creates the connection with a default buffer
+            </summary>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.#ctor(System.Int32)">
+            <summary>
+            Creates the connection
+            </summary>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.Dispose">
+            <summary>
+            IDisposable implementation
+            </summary>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.Evaluate(System.String)">
+            <summary>
+            Evaluates an expression and returns true on completion		
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.EvaluateAsString(System.String)">
+            <summary>
+            Evaluates an expression and returns true on completion		
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.IsVisible">
+            <summary>
+            Say if the MATLAB window is visible
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.SetVisible(System.Boolean)">
+            <summary>
+            Fixes the MATLAB windows visibility
+            </summary>
+            <param name="b"></param>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.GetMatrix(System.String,System.Double[0:,0:]@)">
+            <summary>
+            Gets a matrix variable 
+            </summary>
+            <param name="name">name of the matrix</param>
+            <param name="data">the matrix, preallocated or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.GetMatrix(System.String)">
+            <summary>
+            Gets a matrix variable 
+            </summary>
+            <param name="name">name of the matrix</param>
+            <param name="data">the matrix, preallocated or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.SetMatrix(System.String,System.Double[0:,0:])">
+            <summary>
+            Sets a matrix variable
+            </summary>
+            <param name="name">Name</param>
+            <param name="data">Data</param>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.SetMatrix(System.String,EngMATLib.Matrix)">
+            <summary>
+            Sets a matrix variable
+            </summary>
+            <param name="name">Name</param>
+            <param name="data">Data</param>
+        </member>
+        <member name="M:EngMATLib.EngMATAccess.Close">
+            <summary>
+            Closes the Connection to MATLAB
+            </summary>
+        </member>
+        <member name="F:EngMATLib.EngMATAccess.engine">
+            <summary>
+            The MATLAB Engine Handle
+            </summary>
+        </member>
+        <member name="P:EngMATLib.EngMATAccess.Active">
+            <summary>
+            Tells if it's active
+            </summary>
+        </member>
+        <member name="P:EngMATLib.EngMATAccess.BufferingActive">
+            <summary>
+            The buffering status
+            </summary>
+        </member>
+        <member name="P:EngMATLib.EngMATAccess.LastResult">
+            <summary>
+            Returns the string result of the last execution
+            </summary>
+        </member>
+        <member name="P:EngMATLib.EngMATAccess.BufferSize">
+            <summary>
+            Gets the size of the result buffer
+            </summary>
+        </member>
+        <member name="T:EngMATLib.Matrix">
+            <summary>
+            A wrapper for mxArray
+            </summary>
+        </member>
+        <member name="M:EngMATLib.Matrix.Dispose(System.Boolean)">
+            <summary>
+            Destruct the mxArray
+            </summary>
+            <param name="disp"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates an empty Matrix rows x columns
+            </summary>
+            <param name="rows"></param>
+            <param name="cols"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Double[0:,0:])">
+            <summary>
+            By Rows Matrix Constructor
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Int32,System.Int32,System.Int32,System.Type)">
+            <summary>
+            Creates a 3 dimensional matrix, for Image Processing
+            </summary>
+            <param name="rows"></param>
+            <param name="cols"></param>
+            <param name="planes"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Int32,System.Int32,System.Type)">
+            <summary>
+            Creates a Matrix with the specific type
+            </summary>
+            <param name="rows"></param>
+            <param name="cols"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Double[0:,0:],System.Boolean)">
+            <summary>
+            Constructor from a matrix of data, the bycol flags specifies to consider
+            data by column (MATLAB) or by rows
+            </summary>
+            <param name="data"></param>
+            <param name="bycol"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.op_Implicit(EngMATLib.Matrix)~System.IntPtr">
+            <summary>
+            Construct a Matrix from a mxArray IntPtre, use with care!
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.IntPtr)">
+            <summary>
+            Special constructor used to create a Matrix directly from a valure
+            returned by custom DLLs
+            </summary>
+            <param name="fromMxArray"></param>
+        </member>
+        <member name="M:EngMATLib.Matrix.#ctor(System.Double[],System.Int32)">
+            <summary>
+            The number of columns of the matrix
+            </summary>
+        </member>
+        <member name="M:EngMATLib.Matrix.Dispose">
+            <summary>
+            IDisposable implementation
+            </summary>
+        </member>
+        <member name="M:EngMATLib.Matrix.AsMatrix">
+            <summary>
+            Returns the mxArray
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.Matrix.AsVector">
+            <summary>
+            Returns as a Vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EngMATLib.Matrix.Finalize">
+            <summary>
+            Destroy the associated matrix
+            </summary>
+        </member>
+        <member name="P:EngMATLib.Matrix.Rows">
+            <summary>
+            The number of rows of the matrix
+            </summary>
+        </member>
+        <member name="P:EngMATLib.Matrix.Cols">
+            <summary>
+            The number of columns of the matrix
+            </summary>
+        </member>
+        <member name="P:EngMATLib.Matrix.Item(System.Int32,System.Int32)">
+            <summary>
+            Read accessor
+            </summary>
+        </member>
+        <member name="P:EngMATLib.Matrix.Mx">
+            <summary>
+            Returns the internal pointer to mxArray
+            </summary>
+        </member>
+        <member name="T:EngMATLib.MatrixDescription">
+            <summary>
+            A Structure that describes a Matrix
+            </summary>
+        </member>
+        <member name="M:EngMATLib.MatrixDescription.#ctor(System.IntPtr)">
+            <summary>
+            Create it from an mxArray
+            </summary>
+            <param name="ma"></param>
+        </member>
+        <member name="M:EngMATLib.MatrixDescription.ToString">
+            <summary>
+            A string representation of the description
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:EngMATLib.MatrixDescription.Type">
+            <summary>
+            The data type of the Matrix 
+            </summary>
+        </member>
+        <member name="F:EngMATLib.MatrixDescription.Name">
+            <summary>
+            The name of the variable
+            </summary>
+        </member>
+        <member name="F:EngMATLib.MatrixDescription.Rows">
+            <summary>
+            The number of rows
+            </summary>
+        </member>
+        <member name="F:EngMATLib.MatrixDescription.Cols">
+            <summary>
+            The number of columns
+            </summary>
+        </member>
+        <member name="P:EngMATLib.MatrixDescription.TypeName">
+            <summary>
+            The string representation of the data elements
+            </summary>
+        </member>
+    </members>
+</doc>

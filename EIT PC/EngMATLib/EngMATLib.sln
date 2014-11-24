@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngMATLib", "EngMATLib.csproj", "{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatLibTest", "..\MatLibTest\MatLibTest.csproj", "{8771353E-6D05-45F7-936C-96C3D0D3FD26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Debug|x86.ActiveCfg = Debug|x86
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Debug|x86.Build.0 = Debug|x86
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Release|x86.ActiveCfg = Release|x86
+		{9D7E4551-9AE0-40B6-A843-FC959AEE3F60}.Release|x86.Build.0 = Release|x86
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Debug|x86.ActiveCfg = Debug|x86
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Release|x86.ActiveCfg = Release|x86
+		{8771353E-6D05-45F7-936C-96C3D0D3FD26}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

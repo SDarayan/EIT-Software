@@ -1,0 +1,10 @@
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\bin\Release\EITSimple.exe
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\bin\Release\EITSimple.pdb
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Release\EITSimple.exe
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Release\EITSimple.pdb
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\bin\Debug\EITSimple.exe
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\bin\Debug\EITSimple.pdb
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Debug\EITSimple.exe
+C:\Users\Brian\Documents\Visual Studio 2005\Projects\EIT\EITSimple\obj\Debug\EITSimple.pdb

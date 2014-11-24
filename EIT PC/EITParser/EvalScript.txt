@@ -1,0 +1,37 @@
+ ''' -----------------------------------------------------------------------------
+    ''' <summary>
+    '''     Resize image with GDI+ so that image is nice & clear with required size.
+    ''' </summary>
+    ''' <param name="image">Original image</param>
+    ''' <param name="height">Output image height</param>
+    ''' <param name="width">Output image width</param>
+    ''' <returns>New image with the specified size</returns>
+    ''' <remarks>
+    ''' </remarks>
+    ''' <history>
+    '''  [Mital.Kakaiya] 27/05/2005 Created
+    ''' </history>
+    ''' -----------------------------------------------------------------------------
+    Public Shared Function ImageResize(ByVal image As System.Drawing.Image, _
+    ByVal height As Int32, ByVal width As Int32) As System.Drawing.Image
+        Dim bitmap As System.Drawing.Bitmap = New System.Drawing.Bitmap(width, height, image.PixelFormat)
+        If bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Format1bppIndexed Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Format4bppIndexed Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Format8bppIndexed Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Undefined Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.DontCare Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Format16bppArgb1555 Or _
+            bitmap.PixelFormat = Drawing.Imaging.PixelFormat.Format16bppGrayScale Then
+            'More Info http://msdn.microsoft.com/library/default.asp?_
+   'url=/library/en-us/cpref/html/frlrfSystemDrawingGraphicsClassFromImageTopic.asp
+            Throw New NotSupportedException("Pixel format of the image is not supported.")
+        End If
+        Dim graphicsImage As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(bitmap)
+        graphicsImage.SmoothingMode = Drawing.Drawing2D.SmoothingMode.HighQuality
+        graphicsImage.InterpolationMode = Drawing.Drawing2D.InterpolationMode.HighQualityBicubic
+        graphicsImage.DrawImage(image, 0, 0, bitmap.Width, bitmap.Height)
+        graphicsImage.Dispose()
+        Return bitmap
+    End Function
+    '''To call this function
+    Dim image As System.Drawing.Image = ImageResize(bigImage, smallHeight, smallWidth)

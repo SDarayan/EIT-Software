@@ -1,0 +1,1 @@
+-c --device DARMSTM -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Obj\switching.o" --omf_browse ".\Obj\switching.crf" --depend ".\Obj\switching.d" "Switching.c"

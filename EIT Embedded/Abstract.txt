@@ -1,0 +1,29 @@
+The 'Blinky' project is a simple program for the STM32F103RBT6 
+using Keil 'MCBSTM32' Evaluation Board and demonstrating 
+interrupt functionality.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL    =            8.00 MHz
+   - SYSCLK  =           72.00 MHz
+   - HCLK    = SYSCLK  = 72.00 MHz
+   - PCLK1   = HCLK/2  = 36.00 MHz
+   - PCLK2   = HCLK    = 72.00 MHz
+   - ADCLK   = PCLK2/6 = 12.00 MHz
+   - SYSTICK = HCLK/8  =  9.00 MHz
+
+ - LED blink with speed depending on potentiometer position
+   - Sys Timer is used in interrupt mode
+ - character LCD displays init message and bargraph 
+   depending on potentiometer position
+ - AD value is output onto serial port USART1 
+   USART1 settings: 115200 baud, 8 data bits, no parity, 1 stop bit
+ - AD is used with DMA
+   AD settings: 12 bit resolution
+ 
+The Blinky program is available in different targets:
+  Simulator:      configured for software Simulator
+  MCBSTM32:       runs from Internal Flash located on chip
+                  (used for production or target debugging)
+  MCBSTM32 + OPT: MCBSTM32 with Flash Options
+                  (used for programming)

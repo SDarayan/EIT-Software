@@ -1,0 +1,30 @@
+*** Creating Trace Output File '.\Obj\eit.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\obj\stm32f10x.o"'
+### List of Objects: adding '".\obj\retarget.o"'
+### List of Objects: adding '".\obj\menu.o"'
+### List of Objects: adding '".\obj\stimpattern.o"'
+### List of Objects: adding '".\obj\switching.o"'
+### List of Objects: adding '".\obj\adc.o"'
+### List of Objects: adding '".\obj\serial.o"'
+### List of Objects: adding '".\obj\lcd.o"'
+### List of Objects: adding '".\obj\os.o"'
+### List of Objects: adding '".\obj\stm32_init.o"'
+### List of Objects: adding '".\obj\main.o"'
+### List of Objects: adding '".\obj\debugmain.o"'
+### ADS-LD Command completed:
+--device DARMSTM ".\obj\stm32f10x.o" ".\obj\retarget.o" ".\obj\menu.o" ".\obj\stimpattern.o" ".\obj\switching.o" ".\obj\adc.o" ".\obj\serial.o" ".\obj\lcd.o" ".\obj\os.o" ".\obj\stm32_init.o" ".\obj\main.o" ".\obj\debugmain.o" --library_type=microlib --strict --scatter ".\Obj\eit.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Lst\eit.map" -o ".\Obj\eit.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Obj\eit.axf'
+### ADS-LD Command File: '.\Obj\eit.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Obj\eit.lnp', Handle=0x00000314
+### Writing '.lnp' file
+### ADS-LD Command file '.\Obj\eit.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

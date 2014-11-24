@@ -1,0 +1,4 @@
+--device DARMSTM ".\obj\stm32f10x.o" ".\obj\retarget.o" ".\obj\menu.o" ".\obj\stimpattern.o" ".\obj\switching.o" ".\obj\adc.o" ".\obj\serial.o" ".\obj\lcd.o" ".\obj\os.o" ".\obj\stm32_init.o" ".\obj\main.o" ".\obj\debugmain.o" --library_type=microlib --strict --scatter ".\Obj\eit.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Lst\eit.map" -o ".\Obj\eit.axf"

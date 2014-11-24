@@ -1,0 +1,1 @@
+-c --device DARMSTM -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Obj\stm32_init.o" --omf_browse ".\Obj\stm32_init.crf" --depend ".\Obj\stm32_init.d" "STM32_Init.c"
